@@ -12,30 +12,37 @@ const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
      const { register, formState: { errors }, handleSubmit } = useForm();
      const [ signInWithEmailAndPassword,user,loading,error, ] = useSignInWithEmailAndPassword(auth);
-     
-     const onSubmit = data => {
-         signInWithEmailAndPassword(data.email ,data.password)
-         setGlobalEmail(data.email)
-         console.log('function',data.email);
-     };
-      
-        let signinErrorMsg;
+     const navigate = useNavigate()
+     const location = useLocation();
+     let from = location.state?.from?.pathname || "/"; 
+     let signinErrorMsg;
         
-        const handleResetPassword = async () =>{
-            if(globalEmail){
+        // const handleResetPassword = async () =>{
+        //     if(globalEmail){
     
-              await sendPasswordResetEmail(globalEmail)
-              toast('Sent Email')
-            }else{
-              toast('Please Enter Your Email Address')
-            }
-          }
+        //       await sendPasswordResetEmail(globalEmail)
+        //       toast('Sent Email')
+        //     }else{
+        //       toast('Please Enter Your Email Address')
+        //     }
+        //   }
         if(loading || gLoading){
            return <Loading/>
+        }
+        if(user || gUser){
+          navigate(from,{replace:true})
         }
         if(error || gError){
             signinErrorMsg= <small><p className='text-red-500  my-3' >{error?.message || gError?.message }</p></small>
         }
+        
+
+        const onSubmit = data => {
+            signInWithEmailAndPassword(data.email ,data.password)
+            setGlobalEmail(data.email)
+            console.log('function',data.email);
+        };
+         
      return (
           <div>
                 <div className='flex h-screen justify-center items-center'>
@@ -97,7 +104,7 @@ const Login = () => {
                     <p><small>Don't Have an Account ?<Link className='text-primary' to="/signup">Create New Account</Link> </small></p>
                 </form>
                 <div className="divider">OR</div>
-                    <p><small>Forgot Password?<button onClick={handleResetPassword} class="btn btn-xs btn-link">Reset Password</button></small></p>
+                    <p><small>Forgot Password?<button  class="btn btn-xs btn-link">Reset Password</button></small></p>
                 <button onClick={()=> signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
             </div>
         </div>

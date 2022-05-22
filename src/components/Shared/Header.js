@@ -17,9 +17,9 @@ const Header = ({children}) => {
      <li><NavLink className="rounded-lg" to="/">Home</NavLink></li>
      <li><NavLink className="rounded-lg" to="/blog">Blog</NavLink></li>
      <li><NavLink className="rounded-lg" to="/about">About</NavLink></li>
+     {user && <li> <p className="rounded-lg" to=""><FaUser/> {user?.email}</p> </li>}
      <li>{ user? <button onClick={handleLogout} className="rounded-lg" >Logout</button> :  <NavLink className="rounded-lg" to="/login">Login</NavLink>}</li>
-     {user && <li> <NavLink className="rounded-lg" to=""><FaUser/> {user?.displayName}</NavLink> </li>}
-     {/* { user && <Nav.Link className="fw-bold " as={Link} to=""><FaUser/>{user?.email}</Nav.Link>} */}
+     
      </>
   return (
     <div>
