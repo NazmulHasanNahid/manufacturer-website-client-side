@@ -8,24 +8,27 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Login = () => {
-    const [globalEmail , setGlobalEmail ] = useState([])
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-     const { register, formState: { errors }, handleSubmit } = useForm();
+     const { register, formState: { errors }, handleSubmit , getValues } = useForm();
      const [ signInWithEmailAndPassword,user,loading,error, ] = useSignInWithEmailAndPassword(auth);
      const navigate = useNavigate()
      const location = useLocation();
      let from = location.state?.from?.pathname || "/"; 
      let signinErrorMsg;
         
-        // const handleResetPassword = async () =>{
-        //     if(globalEmail){
+        const handleResetPassword = async () =>{
+            const email = getValues("email");
+            if(email){
     
-        //       await sendPasswordResetEmail(globalEmail)
-        //       toast('Sent Email')
-        //     }else{
-        //       toast('Please Enter Your Email Address')
-        //     }
-        //   }
+              await sendPasswordResetEmail(email)
+              toast('Check Email Email')
+            }else{
+              toast.error('Please Enter Your Email Address')
+            }
+          }
+
+
+        
         if(loading || gLoading){
            return <Loading/>
         }
@@ -39,7 +42,7 @@ const Login = () => {
 
         const onSubmit = data => {
             signInWithEmailAndPassword(data.email ,data.password)
-            setGlobalEmail(data.email)
+           
             console.log('function',data.email);
         };
          
@@ -56,7 +59,7 @@ const Login = () => {
                     <span className="label-text">Email</span>
                    
                 </label>
-                <input type="Email" placeholder="Your Email" className="input input-bordered w-full max-w-xs" {...register("email",  {
+                <input type="Email"  placeholder="Your Email" className="input input-bordered w-full max-w-xs" {...register("email",  {
                                 required:{
                                     value:true ,
                                     message:'Email is required'
@@ -104,7 +107,7 @@ const Login = () => {
                     <p><small>Don't Have an Account ?<Link className='text-primary' to="/signup">Create New Account</Link> </small></p>
                 </form>
                 <div className="divider">OR</div>
-                    <p><small>Forgot Password?<button  class="btn btn-xs btn-link">Reset Password</button></small></p>
+                    <p><small>Forgot Password?<button onClick={ handleResetPassword }  class="btn btn-xs btn-link">Reset Password</button></small></p>
                 <button onClick={()=> signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
             </div>
         </div>
