@@ -3,6 +3,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from 'firebase/auth';
 import { NavLink } from "react-router-dom";
 import auth from "../Auth/firebase.init";
+import { FaUser } from 'react-icons/fa';
+
+
 
 const Header = ({children}) => {
   const [user, loading, error] = useAuthState(auth);
@@ -15,6 +18,8 @@ const Header = ({children}) => {
      <li><NavLink className="rounded-lg" to="/blog">Blog</NavLink></li>
      <li><NavLink className="rounded-lg" to="/about">About</NavLink></li>
      <li>{ user? <button onClick={handleLogout} className="rounded-lg" >Logout</button> :  <NavLink className="rounded-lg" to="/login">Login</NavLink>}</li>
+     {user && <li> <NavLink className="rounded-lg" to=""><FaUser/> {user?.displayName}</NavLink> </li>}
+     {/* { user && <Nav.Link className="fw-bold " as={Link} to=""><FaUser/>{user?.email}</Nav.Link>} */}
      </>
   return (
     <div>
