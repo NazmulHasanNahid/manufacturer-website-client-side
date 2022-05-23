@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../Auth/firebase.init';
-import { sendPasswordResetEmail, signInWithEmailAndPassword } from "firebase/auth";
+import { sendPasswordResetEmail,  } from "firebase/auth";
 import {useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase-hooks/auth'
 import Loading from '../Shared/Loading'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -18,6 +18,7 @@ const Login = () => {
         
         const handleResetPassword = async () =>{
             const email = getValues("email");
+            console.log('get values',email);
             if(email){
     
               await sendPasswordResetEmail(email)

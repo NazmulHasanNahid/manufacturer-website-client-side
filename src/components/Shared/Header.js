@@ -4,6 +4,7 @@ import { signOut } from 'firebase/auth';
 import { NavLink } from "react-router-dom";
 import auth from "../Auth/firebase.init";
 import { FaUser } from 'react-icons/fa';
+import logo from '../../aset/img/logo.png'
 
 
 
@@ -26,8 +27,8 @@ const Header = ({children}) => {
       <div className="drawer drawer-end">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
-          <div className="w-full navbar bg-base-300  lg:px-20 ">
-          <div className="flex-1 px-2 mx-2">Random</div>
+          <div className="w-full navbar bg-base-100  lg:px-20 ">
+          <div className="flex-1 px-2 mx-2"><img width={60} src={logo} alt="" /></div>
             <div className="flex-none lg:hidden ">
               <label for="my-drawer-3" className="btn btn-square btn-ghost">
                 <svg
