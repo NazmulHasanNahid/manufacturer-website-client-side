@@ -15,6 +15,12 @@ import NotFound from './components/Shared/NotFound';
 import Footer from './components/Shared/Footer';
 import RequireAuth from './components/Auth/RequireAuth';
 import ToolsDetail from './components/Pages/ToolsDetail';
+import Dashboard from './components/Dashboard/Dashboard';
+import Myprofile from './components/Dashboard/Myprofile';
+import AddTools from './components/Dashboard/AddTools';
+import Myorder from './components/Dashboard/Myorder';
+import AddReview from './components/Dashboard/AddReview';
+import DashboardContainer from './components/Dashboard/DashboardContainer';
 
 function App() {
   return (
@@ -24,9 +30,16 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/blog' element={<RequireAuth><Blog/></RequireAuth>}/>
         <Route path='/about' element={<About/>}/>
-        <Route path='/toolsdetail/:id' element={<ToolsDetail/>}/>
+        <Route path='/toolsdetail/:id' element={<RequireAuth><ToolsDetail/></RequireAuth>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<SignUp/>}/>
+        <Route path='/dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
+          <Route index element={<DashboardContainer/>}></Route>
+          <Route path='addTools' element={<AddTools/>}></Route>
+          <Route path='myorder' element={<Myorder/>}></Route>
+          <Route path='addreview' element={<AddReview/>}></Route>
+          <Route path='myProfile' element={<Myprofile/>}></Route>
+        </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       
