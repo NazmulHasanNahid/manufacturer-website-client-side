@@ -14,6 +14,7 @@ import SignUp from './components/Auth/SignUp';
 import NotFound from './components/Shared/NotFound';
 import Footer from './components/Shared/Footer';
 import RequireAuth from './components/Auth/RequireAuth';
+import ToolsDetail from './components/Pages/ToolsDetail';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/blog' element={<RequireAuth><Blog/></RequireAuth>}/>
         <Route path='/about' element={<About/>}/>
+        <Route path='/toolsdetail/:id' element={<ToolsDetail/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='*' element={<NotFound/>}/>

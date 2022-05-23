@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ShowFeatureTools = ({ tool }) => {
   console.log(tool);
@@ -18,7 +19,9 @@ const ShowFeatureTools = ({ tool }) => {
         
        </h2>
        <p>{description.slice(0,90)}</p>
-       <button class="btn">Book Now</button>
+       <Link to={`toolsdetail/${_id}`}>
+         <button class="btn">Book Now</button>
+       </Link>
 
      </div>
    </div>
