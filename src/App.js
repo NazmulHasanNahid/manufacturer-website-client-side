@@ -23,6 +23,7 @@ import AddReview from './components/Dashboard/AddReview';
 import DashboardContainer from './components/Dashboard/DashboardContainer';
 import AllUser from './components/Dashboard/AllUser';
 import RequireAdmin from './components/Auth/RequireAdmin';
+import ManageProducts from './components/Dashboard/ManageProducts';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
           <Route path='addreview' element={<AddReview/>}></Route>
           <Route path='myProfile' element={<Myprofile/>}></Route>
           <Route path='alluser' element={<RequireAdmin><AllUser/></RequireAdmin>}></Route>
+          <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>}></Route>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>

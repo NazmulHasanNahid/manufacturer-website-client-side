@@ -22,11 +22,12 @@ const Dashboard = () => {
     <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
      
       
-      <li><NavLink to="myorder">My Order</NavLink></li>
+      <li><NavLink to="myProfile">My Profile</NavLink></li>
+      <li><NavLink to="myorder">My Orders</NavLink></li>
       <li><NavLink to="addreview">Add A Review</NavLink></li>
       {admin && <li><NavLink to="addTools">Add New Products</NavLink></li>}
-      <li><NavLink to="myProfile">My Profile</NavLink></li>
-     { admin && <li><NavLink to="alluser">Manage User</NavLink></li>}
+      {admin && <li><NavLink to="manageProducts">Manage Products</NavLink></li>}
+     { admin && <li><NavLink to="alluser">Make Admin</NavLink></li>}
       
     </ul>
   

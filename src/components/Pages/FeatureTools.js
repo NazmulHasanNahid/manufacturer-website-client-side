@@ -1,9 +1,13 @@
 import React from 'react';
 import useTools from '../../hooks/useTools';
+import Loading from '../Shared/Loading';
 import ShowFeatureTools from './ShowFeatureTools';
 
 const FeatureTools = () => {
      const [tools , setTools] = useTools()
+     if(tools.length === 0){
+          return <Loading/>
+      }
      return (
           <div>
                <h2 className='text-center text-3xl font-bold'>Feature Tools</h2>

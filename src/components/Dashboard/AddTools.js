@@ -21,11 +21,11 @@ const AddTools = () => {
    
      };
      return (
-          <div>
-               <div >
-      <div className="card w-96 bg-base-100 shadow-xl">
+         
+              
+      <div className="card w-96 bg-base-100 shadow-xl ">
         <div className="card-body">
-          <h2 className="text-center text-2xl font-bold">Add Your Review</h2>
+          <h2 className="text-center text-2xl font-bold">Add New products</h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
@@ -96,14 +96,14 @@ const AddTools = () => {
             </div>
             <div className="flex justify-center">
 
-            <button type="submit" className="btn btn-wide mt-3">Add Tools</button>
+            <button type="submit" className="btn btn-wide mt-3">Add Products</button>
             </div>
           </form>
         </div>
       </div>
       
-    </div>
-          </div>
+    
+        
      );
 };
 

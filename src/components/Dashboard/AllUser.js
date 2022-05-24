@@ -21,15 +21,15 @@ const AllUser = () => {
   
   return (
     <div>
-    <h2 className="text-2xl">All Users: {users.length}</h2>
+    
     <div class="overflow-x-auto">
-        <table class="table w-full">
+        <table class="table w-full my-5">
             <thead>
                 <tr>
                     <th></th>
-                    <th>Name</th>
-                    <th>Job</th>
-                    <th>Favorite Color</th>
+                    <th>Email</th>
+                    <th>Make Admin</th>
+                    <th>Remove User</th>
                 </tr>
             </thead>
             <tbody>
