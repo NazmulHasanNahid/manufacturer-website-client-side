@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Banner.css";
 
 const ShowFeatureTools = ({ tool }) => {
-  console.log(tool);
+ 
   const { name, description, image, instock, perproduct, minimumorder, _id } =
     tool;
   return (

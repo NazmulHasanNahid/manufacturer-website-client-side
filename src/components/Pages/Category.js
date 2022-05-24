@@ -5,7 +5,7 @@ import c3 from '../../aset/img/c3.jpg'
 
 const Category = () => {
      return (
-          <div className='my-5'>
+          <div className='my-10'>
             <h1 className='catagories-title text-center'>All Catagories</h1>
             <div className='catagories-container'>
                 <div className='catagories'>

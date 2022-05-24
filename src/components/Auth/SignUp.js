@@ -2,6 +2,7 @@ import React from 'react';
 import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 import Loading from '../Shared/Loading';
 import auth from './firebase.init';
 
@@ -13,9 +14,9 @@ const SignUp = () => {
     const navigate = useNavigate()
     const location = useLocation();
     let from = location.state?.from?.pathname || "/"; 
+    const [token] = useToken(user || gUser)
     
-    
-    if(user || gUser){
+    if(token){
         navigate(from,{replace:true})
     }
     

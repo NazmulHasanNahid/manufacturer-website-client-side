@@ -73,12 +73,13 @@
  }
  .catagories-container{
      display: grid;
-     grid-template-columns: repeat(6,1fr);
-     gap: 10px;
+     grid-template-columns: repeat(3,1fr);
+     gap: 20px;
  }
  .catagories-container img{
      width: 50px;
      margin-bottom: 10px;
+
  }
  .catagories-container h3{
      font-family: 'Roboto', sans-serif;
@@ -89,6 +90,7 @@
  }
  .catagories{
      display: flex;
+     
      flex-direction: column;
      align-items: center;
      border-radius: 8px;

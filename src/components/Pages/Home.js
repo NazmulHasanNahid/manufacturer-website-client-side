@@ -8,10 +8,10 @@ import './Banner.css'
 
 const Home = () => {
      return (
-          <div className=''>
+          <div className='max-w-7xl mx-auto'>
               <Banner/>
-              <FeatureTools/>
               <Category/>
+              <FeatureTools/>
               <Summary/>
               <Reviews/>
           </div>

@@ -18,7 +18,7 @@ const Login = () => {
         
         const handleResetPassword = async () =>{
             const email = getValues("email");
-            console.log('get values',email);
+           
             if(email){
     
               await sendPasswordResetEmail(email)
@@ -44,7 +44,7 @@ const Login = () => {
         const onSubmit = data => {
             signInWithEmailAndPassword(data.email ,data.password)
            
-            console.log('function',data.email);
+          
         };
          
      return (
