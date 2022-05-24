@@ -12,13 +12,13 @@ const UserRow = ({ user, index }) => {
         })
             .then(res => {
                 if(res.status === 403){
-                    toast.error('Failed to Make an admin');
+                    toast.error(`Sorry You Can't Made Admin Cause You're Not Admin`);
                 }
                 return res.json()})
             .then(data => {
                 if (data.modifiedCount > 0) {
                   
-                    toast.success(`Successfully made an admin`);
+                    toast.success(`Successfully made an admin `);
                 }
 
             })

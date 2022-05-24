@@ -16,7 +16,7 @@ const AllUser = () => {
     })
       .then((res) => res.json())
       .then((data) => setUsers(data));
-  }, []);
+  }, [users]);
 
   
   return (
