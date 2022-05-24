@@ -12,6 +12,7 @@ const Header = ({children}) => {
   const [user, loading, error] = useAuthState(auth);
   const handleLogout = () =>{
     signOut(auth)
+    localStorage.removeItem('accessToken')
   }
   
      const navItems = <>

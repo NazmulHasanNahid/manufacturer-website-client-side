@@ -18,9 +18,10 @@ const Dashboard = () => {
       {/* <!-- Sidebar content here --> */}
       
       <li><NavLink to="myorder">My Order</NavLink></li>
-      <li><NavLink to="addreview">Add Review</NavLink></li>
-      <li><NavLink to="addTools">Add Tools</NavLink></li>
+      <li><NavLink to="addreview">Add A Review</NavLink></li>
+      <li><NavLink to="addTools">Add New Products</NavLink></li>
       <li><NavLink to="myProfile">My Profile</NavLink></li>
+      <li><NavLink to="alluser">Manage User</NavLink></li>
       
     </ul>
   

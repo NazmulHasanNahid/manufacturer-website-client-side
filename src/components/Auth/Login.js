@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import auth from '../Auth/firebase.init';
 import { sendPasswordResetEmail,  } from "firebase/auth";
@@ -6,16 +6,18 @@ import {useSignInWithEmailAndPassword, useSignInWithGoogle} from 'react-firebase
 import Loading from '../Shared/Loading'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
      const { register, formState: { errors }, handleSubmit , getValues } = useForm();
      const [ signInWithEmailAndPassword,user,loading,error, ] = useSignInWithEmailAndPassword(auth);
      const navigate = useNavigate()
+     const [token] = useToken(user || gUser)
      const location = useLocation();
      let from = location.state?.from?.pathname || "/"; 
      let signinErrorMsg;
-        
+     
         const handleResetPassword = async () =>{
             const email = getValues("email");
            
@@ -29,13 +31,16 @@ const Login = () => {
           }
 
 
-        
+          useEffect(()=>{
+            if(token){
+                navigate(from,{replace:true})
+              }
+        },[token , from , navigate])
+            
         if(loading || gLoading){
            return <Loading/>
         }
-        if(user || gUser){
-          navigate(from,{replace:true})
-        }
+        
         if(error || gError){
             signinErrorMsg= <small><p className='text-red-500  my-3' >{error?.message || gError?.message }</p></small>
         }
@@ -47,6 +52,7 @@ const Login = () => {
           
         };
          
+        
      return (
           <div>
                 <div className='flex h-screen justify-center items-center'>

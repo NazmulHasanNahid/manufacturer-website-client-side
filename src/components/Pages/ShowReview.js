@@ -9,7 +9,7 @@ const ShowReview = ({review}) => {
         <div class="card-body">
           <h2 class="card-title">{review.name}</h2>
           <p>
-            <small>{review.review.slice(0,200)}</small>
+            <small>{review.review}</small>
           </p>
         </div>
       </div>

@@ -1,8 +1,12 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import auth from '../Auth/firebase.init';
 
 const AddReview = () => {
+  const [user, loading, error] = useAuthState(auth);
+
      const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
     const url = `http://localhost:5000/review`;
@@ -35,6 +39,8 @@ const AddReview = () => {
                 placeholder="Type here"
                 {...register("name", { required: true })}
                 className="input input-bordered  w-full max-w-xs"
+                value={user.displayName}
+                readOnly
               />
             </div>
             

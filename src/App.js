@@ -21,6 +21,7 @@ import AddTools from './components/Dashboard/AddTools';
 import Myorder from './components/Dashboard/Myorder';
 import AddReview from './components/Dashboard/AddReview';
 import DashboardContainer from './components/Dashboard/DashboardContainer';
+import AllUser from './components/Dashboard/AllUser';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Route path='myorder' element={<Myorder/>}></Route>
           <Route path='addreview' element={<AddReview/>}></Route>
           <Route path='myProfile' element={<Myprofile/>}></Route>
+          <Route path='alluser' element={<AllUser/>}></Route>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
