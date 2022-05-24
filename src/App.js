@@ -24,8 +24,8 @@ import DashboardContainer from './components/Dashboard/DashboardContainer';
 
 function App() {
   return (
-    <div >
-      <Header>
+    <div className='max-w-7xl mx-auto' >
+      <Header/>
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/blog' element={<RequireAuth><Blog/></RequireAuth>}/>
@@ -42,9 +42,9 @@ function App() {
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
-      
       <ToastContainer />
-      </Header>
+      
+     <Footer/>
       
     </div>
   );

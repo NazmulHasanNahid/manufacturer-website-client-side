@@ -9,9 +9,9 @@ const Reviews = () => {
              .then(data => setReviews(data))
      },[])
      return (
-          <div>
-               <h2 className='text-center text-3xl my-6'>Client Review</h2>
-          <div className='px-20 grid grid-cols-1 lg:grid-cols-3 gap-5 my-5'>
+          <div className='px-20'>
+               <h2 className='text-center text-3xl my-6 font-bold'>Client Reviews</h2>
+          <div className=' grid grid-cols-1 lg:grid-cols-3 gap-5 my-5'>
                
             
              {

@@ -39,26 +39,43 @@ const ToolsDetail = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 flex  items-center my-5">
     
-      <div class="card lg:card-side bg-base-100   shadow-xl">
-        <figure>
-          <img width="400px" src={image}  alt="loading"/>
+    <div className="card-container g-3 col-sm-12 col-md-6 col-lg-3">
+      <div class="card item-cart bg-base-100 ">
+        <figure class="px-10 pt-10">
+          <img src={image} alt="Shoes" class="rounded-xl" />
         </figure>
         <div class="card-body">
           <h2 class="card-title">{name}</h2>
-          <p>{description}</p>
-          <div class="card-actions ">
-            <div class="p-2 text-white bg-slate-700">Instock : {instock}</div>
-            <div class="p-2 text-white bg-slate-700">
-              Perproduct : {perproduct}
-            </div>
-            <div class="p-2 text-white bg-slate-700">
-              Minimum Order : {minimumorder}
+          <p>
+            <small>{description}</small>
+          </p>
+          <div>
+            <h5>
+              {" "}
+              Price : <span className="font-bold">{perproduct}$</span>
+            </h5>
+            <div className="d-flex justify-content-between">
+              <p>
+                <small>
+                  Stock :{" "}
+                  <span className="text-orange-500 font-bold">{instock}p</span>
+                </small>
+              </p>
+              <p>
+                <small>
+                  Minimum Order :{" "}
+                  <span className="text-orange-500 font-bold">
+                    {" "}
+                    {minimumorder}p
+                  </span>
+                </small>
+              </p>
             </div>
           </div>
-          <div class="card-actions justify-start">
-          </div>
+          
         </div>
       </div>
+    </div>
       
     
     <div>

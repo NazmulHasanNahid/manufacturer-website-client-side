@@ -1,0 +1,60 @@
+/* .top-banner{
+     display: flex;
+     align-items: center
+ }
+ .top-banner img{
+     width: 50%;
+ }
+ .top-banner h1{
+     color: #18212d;
+ }
+ 
+ 
+ @media only screen and (max-width: 600px) {
+     .top-banner{
+         flex-direction: column;
+     }
+     .banner-info{
+         padding: 20px;
+     }
+   } */
+
+
+.summary-container{
+     display: flex;
+     justify-content: center;
+     margin-top: 40px;
+ }
+ .review{
+     color: #f96226;
+ }
+
+
+
+
+
+
+
+
+
+ .card-container img{
+     width: 100px;
+     height: 100px;
+ }
+ 
+ .item-cart{
+     border-radius: 8px;
+     border: 1px solid rgb(251, 240, 236);
+     background-color: rgba(154, 152, 152, 0.042);
+     box-shadow: 0px 8px 15px rgba(183, 179, 179, 0.098);
+     transition: all 0.3s ease 0s;
+     /* color: rgb(154, 154, 155);
+     padding: 30px; */
+ }
+ 
+ .item-cart:hover{
+     background-color: #ffffff;
+     box-shadow: 0px 15px 20px rgba(247, 188, 156, 0.29);
+     /* color: #f68051; */
+     transform: translateY(-7px);
+   }

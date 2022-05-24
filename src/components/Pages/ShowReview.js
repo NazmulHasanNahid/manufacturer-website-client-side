@@ -3,13 +3,17 @@ import React from 'react';
 const ShowReview = ({review}) => {
      
      return (
-          <div class="card lg:w-100 mt-3  bg-primary text-primary-content">
-          <div class="card-body">
-            <h2 class="card-title">Task : {review.name}</h2>
-            <p>Description : {review.review}</p>
-            
-          </div>
+      <div className="card-container g-3 col-sm-12 col-md-6 col-lg-3">
+      <div class="card item-cart bg-base-100 ">
+       
+        <div class="card-body">
+          <h2 class="card-title">{review.name}</h2>
+          <p>
+            <small>{review.review.slice(0,200)}</small>
+          </p>
         </div>
+      </div>
+    </div>
      );
 };
 
