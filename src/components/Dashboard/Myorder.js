@@ -30,15 +30,16 @@ const Myorder = () => {
      return (
           <div>
                <h2>my orders {order.length}</h2>
-               <div class="overflow-x-auto">
-  <table class="table w-full">
+               <div className="overflow-x-auto">
+  <table className="table w-full">
    
     <thead>
       <tr>
         <th></th>
         <th>Name</th>
-        <th>Job</th>
-        <th>Favorite Color</th>
+        <th>Avatar</th>
+        <th>cancel</th>
+        <th>Pay</th>
       </tr>
     </thead>
     <tbody>
@@ -46,9 +47,10 @@ const Myorder = () => {
            order.map(o =>
             <tr>
                <th>1</th>
-               <td>{o.name}</td>
-               <td>Quality Control Specialist</td>
-               <td>Blue</td>
+               <td>{o.producttitle}</td>
+               <td><img width={40} src={o.image} alt="" /></td>
+               <td><button className='btn btn-error'>Cancel</button></td>
+               <td><button class="btn btn-primary">Payment</button></td>
              </tr> )
       }
       

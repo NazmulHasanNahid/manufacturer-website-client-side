@@ -11,6 +11,7 @@ const ToolsDetail = () => {
   const { register, handleSubmit } = useForm();
 
   const [tools, setTools] = useState({});
+  const [quantity, setQuantity] = useState(0);
   const { name, description, image, instock, perproduct, minimumorder } = tools;
   useEffect(() => {
     const url = `http://localhost:5000/tools/${id}`;
@@ -32,7 +33,7 @@ const ToolsDetail = () => {
       .then((res) => res.json())
       .then((result) => {
         e.target.reset();
-        toast("Category added");
+        toast("Order Successfull");
       });
     
   };
@@ -40,12 +41,12 @@ const ToolsDetail = () => {
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 flex  items-center my-5">
     
     <div className="card-container g-3 col-sm-12 col-md-6 col-lg-3">
-      <div class="card item-cart bg-base-100 ">
-        <figure class="px-10 pt-10">
-          <img src={image} alt="Shoes" class="rounded-xl" />
+      <div className="card item-cart bg-base-100 ">
+        <figure className="px-10 pt-10">
+          <img src={image} alt="Shoes" className="rounded-xl" />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title">{name}</h2>
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
           <p>
             <small>{description}</small>
           </p>
@@ -96,6 +97,14 @@ const ToolsDetail = () => {
                 </div>
                 <div className="form-control w-full max-w-xs">
                 <input type="number"   className="input my-3 input-bordered w-full max-w-xs" placeholder="Phone number"  {...register("phonenumber", { required: true })} />
+                
+                </div>
+                <div className="form-control w-full max-w-xs">
+                <input type="text" readOnly  className="input my-3 input-bordered w-full max-w-xs" value={name}  {...register("producttitle", { required: true })} />
+                
+                </div>
+                <div className="form-control w-full max-w-xs">
+                <input type="text" readOnly  className="input my-3 input-bordered w-full max-w-xs" value={image}  {...register("image", { required: true })} />
                 
                 </div>
                 <div className="form-control my-3 w-full max-w-xs">

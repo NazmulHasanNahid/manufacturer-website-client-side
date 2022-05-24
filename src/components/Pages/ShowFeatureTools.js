@@ -8,12 +8,12 @@ const ShowFeatureTools = ({ tool }) => {
     tool;
   return (
     <div className="card-container g-3 col-sm-12 col-md-6 col-lg-3">
-      <div class="card item-cart bg-base-100 ">
-        <figure class="px-10 pt-10">
-          <img src={image} alt="Shoes" class="rounded-xl" />
+      <div className="card item-cart bg-base-100 ">
+        <figure className="px-10 pt-10">
+          <img src={image} alt="Shoes" className="rounded-xl" />
         </figure>
-        <div class="card-body">
-          <h2 class="card-title">{name}</h2>
+        <div className="card-body">
+          <h2 className="card-title">{name}</h2>
           <p>
             <small>{description.slice(0, 90)}</small>
           </p>
@@ -40,9 +40,9 @@ const ShowFeatureTools = ({ tool }) => {
               </p>
             </div>
           </div>
-          <div class="card-actions d-flex justify-content-center mt-3">
+          <div className="card-actions d-flex justify-content-center mt-3">
             <Link to={`toolsdetail/${_id}`}>
-              <button class="btn">Book Now</button>
+              <button className="btn">Book Now</button>
             </Link>
           </div>
         </div>

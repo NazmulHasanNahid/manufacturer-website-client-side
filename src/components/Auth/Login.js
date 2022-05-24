@@ -114,7 +114,7 @@ const Login = () => {
                     <p><small>Don't Have an Account ?<Link className='text-primary' to="/signup">Create New Account</Link> </small></p>
                 </form>
                 <div className="divider">OR</div>
-                    <p><small>Forgot Password?<button onClick={ handleResetPassword }  class="btn btn-xs btn-link">Reset Password</button></small></p>
+                    <p><small>Forgot Password?<button onClick={ handleResetPassword }  className="btn btn-xs btn-link">Reset Password</button></small></p>
                 <button onClick={()=> signInWithGoogle()} className="btn btn-outline">Continue With Google</button>
             </div>
         </div>

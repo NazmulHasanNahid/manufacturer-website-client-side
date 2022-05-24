@@ -18,6 +18,7 @@ const Header = ({children}) => {
      const navItems = <>
      <li><NavLink className="rounded-lg" to="/">Home</NavLink></li>
      <li><NavLink className="rounded-lg" to="/blog">Blog</NavLink></li>
+     <li><NavLink className="rounded-lg" to="/portfolio">My Portfolio</NavLink></li>
      <li><NavLink className="rounded-lg" to="/about">About</NavLink></li>
     {user && <li><NavLink className="rounded-lg" to="/dashboard">Dashboard</NavLink></li>}
      {user && <li> <p className="rounded-lg" to=""><FaUser/> {user?.email}</p> </li>}
@@ -59,7 +60,7 @@ const Header = ({children}) => {
       <div className="">
         <label
           tabIndex="1"
-          for="dashboard-sidebar"
+          htmlFor="dashboard-sidebar"
           className="btn btn-ghost lg:hidden"
         >
           <svg

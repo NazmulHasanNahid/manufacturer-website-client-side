@@ -4,14 +4,14 @@ import './Banner.css'
 const Summary = () => {
      return (
           <div className="summary-container mb-4">
-          <div class="stats stats-vertical lg:stats-horizontal">
-            <div class="stat">
-              <div class="stat-figure review">
+          <div className="stats stats-vertical lg:stats-horizontal">
+            <div className="stat">
+              <div className="stat-figure review">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  class="inline-block w-8 h-8 stroke-current"
+                  className="inline-block w-8 h-8 stroke-current"
                 >
                   <path
                     stroke-linecap="round"
@@ -21,18 +21,18 @@ const Summary = () => {
                   ></path>
                 </svg>
               </div>
-              <div class="stat-title">Total Reviews</div>
-              <div class="review stat-value">55.6K</div>
-              <div class="stat-desc">21% more than last month</div>
+              <div className="stat-title">Total Reviews</div>
+              <div className="review stat-value">55.6K</div>
+              <div className="stat-desc">21% more than last month</div>
             </div>
           
-            <div class="stat">
-              <div class="stat-figure review">
+            <div className="stat">
+              <div className="stat-figure review">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  class="inline-block w-8 h-8 stroke-current"
+                  className="inline-block w-8 h-8 stroke-current"
                 >
                   <path
                     stroke-linecap="round"
@@ -42,35 +42,35 @@ const Summary = () => {
                   ></path>
                 </svg>
               </div>
-              <div class="stat-title">Customers</div>
-              <div class="stat-value text-secondary">2.6M</div>
+              <div className="stat-title">Customers</div>
+              <div className="stat-value text-secondary">2.6M</div>
             </div>
           
-            <div class="stat">
-              <div class="stat-figure text-secondary">
-                <div class="avatar online"></div>
+            <div className="stat">
+              <div className="stat-figure text-secondary">
+                <div className="avatar online"></div>
               </div>
-              <div class="stat-value">500+</div>
-              <div class="stat-title">Tools & Parts</div>
-              <div class="stat-desc text-secondary">Upcoming</div>
+              <div className="stat-value">500+</div>
+              <div className="stat-title">Tools & Parts</div>
+              <div className="stat-desc text-secondary">Upcoming</div>
             </div>
-            <div class="stat">
-              <div class="stat-figure text-secondary">
+            <div className="stat">
+              <div className="stat-figure text-secondary">
                
               </div>
-              <div class="stat-value">10000$</div>
-              <div class="stat-title">Annual Revenue</div>
-              <div class="stat-desc text-secondary">
+              <div className="stat-value">10000$</div>
+              <div className="stat-title">Annual Revenue</div>
+              <div className="stat-desc text-secondary">
                 Total revenue 19999999999999999+
               </div>
             </div>
-            <div class="stat">
-              <div class="stat-figure review">
+            <div className="stat">
+              <div className="stat-figure review">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  class="inline-block w-8 h-8 stroke-current"
+                  className="inline-block w-8 h-8 stroke-current"
                 >
                   <path
                     stroke-linecap="round"
@@ -80,9 +80,9 @@ const Summary = () => {
                   ></path>
                 </svg>
               </div>
-              <div class="stat-title">New Registers</div>
-              <div class="stat-value">1,200</div>
-              <div class="stat-desc">↘︎ 90 (14%)</div>
+              <div className="stat-title">New Registers</div>
+              <div className="stat-value">1,200</div>
+              <div className="stat-desc">↘︎ 90 (14%)</div>
             </div>
           </div>
       </div>

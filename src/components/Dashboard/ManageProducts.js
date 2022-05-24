@@ -23,7 +23,7 @@ const ManageProducts = () => {
    };
   return (
     <div>
-      <table class="table w-full">
+      <table className="table w-full">
         <thead>
           <tr>
             <th></th>
@@ -41,7 +41,7 @@ const ManageProducts = () => {
                 <img width={30} src={tool?.image} alt="" />
               </td>
               <td>
-                <button onClick={handleDelet} class="btn btn-error text-white">Delete</button>
+                <button onClick={handleDelet} className="btn btn-error text-white">Delete</button>
               </td>
             </tr>
           ))}

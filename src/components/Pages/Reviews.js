@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import {  useQuery } from 'react-query'
 import { Link } from 'react-router-dom';
 import Loading from '../Shared/Loading';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 import ShowReview from './ShowReview';
 
@@ -27,9 +28,11 @@ const Reviews = () => {
               }
             
           </div>
-          <Link to="/allreviews">
-          <button className='btn btn-xs'>All Reviews</button>
+          <div className='text-center my-5'>
+          <Link className='' to="/allreviews">
+          <button className="btn btn-link">See All Reviews <AiOutlineArrowRight/> </button>
           </Link>
+          </div>
           </div>
      );
 };

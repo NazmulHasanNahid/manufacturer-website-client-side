@@ -26,6 +26,7 @@ import RequireAdmin from './components/Auth/RequireAdmin';
 import ManageProducts from './components/Dashboard/ManageProducts';
 import AllReviews from './components/Pages/AllReviews';
 import AddCategories from './components/Dashboard/AddCategories';
+import MyPortfolio from './components/Pages/MyPortfolio';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/blog' element={<Blog/>}/>
+        <Route path='/portfolio' element={<MyPortfolio/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/toolsdetail/:id' element={<RequireAuth><ToolsDetail/></RequireAuth>}/>
         <Route path='/login' element={<Login/>}/>
