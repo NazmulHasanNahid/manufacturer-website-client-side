@@ -26,6 +26,7 @@ const Dashboard = () => {
       <li><NavLink to="myorder">My Orders</NavLink></li>
       <li><NavLink to="addreview">Add A Review</NavLink></li>
       {admin && <li><NavLink to="addTools">Add New Products</NavLink></li>}
+      {admin && <li><NavLink to="addCategory">Add New Category</NavLink></li>}
       {admin && <li><NavLink to="manageProducts">Manage Products</NavLink></li>}
      { admin && <li><NavLink to="alluser">Make Admin</NavLink></li>}
       

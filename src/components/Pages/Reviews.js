@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { QueryClient, QueryClientProvider, useQuery } from 'react-query'
+import {  useQuery } from 'react-query'
+import { Link } from 'react-router-dom';
 import Loading from '../Shared/Loading';
 
 import ShowReview from './ShowReview';
@@ -22,10 +23,13 @@ const Reviews = () => {
                
             
              {
-                   reviews.map(review => <ShowReview key={review._id} review={review}></ShowReview> )
+                   reviews.slice(0,6).map(review => <ShowReview key={review._id} review={review}></ShowReview> )
               }
             
           </div>
+          <Link to="/allreviews">
+          <button className='btn btn-xs'>All Reviews</button>
+          </Link>
           </div>
      );
 };

@@ -1,37 +1,21 @@
-import React from 'react';
-import c1 from '../../aset/img/c1.jpg'
-import c2 from '../../aset/img/c2.jpg'
-import c3 from '../../aset/img/c3.jpg'
+import React, { useEffect, useState } from 'react';
+import ShowCategory from './ShowCategory';
 
 const Category = () => {
+
+    const [categories , setCategories] = useState([])
+    useEffect(()=>{
+        fetch('http://localhost:5000/category')
+         .then(res => res.json())
+         .then(data => setCategories(data))
+    },[])
      return (
           <div className='my-10'>
-            <h1 className='catagories-title text-center'>All Catagories</h1>
+            <h1 className='catagories-title text-center'>Catagories</h1>
             <div className='catagories-container'>
-                <div className='catagories'>
-                    <img src={c1} alt="" srcset="" />
-                    <h3 className=''>Spare Parts</h3>
-                </div>
-                <div className='catagories'>
-                    <img src={c2} alt="" srcset="" />
-                    <h3 className=''>Tyres nd Wheels</h3>
-                </div>
-                <div className='catagories'>
-                    <img src={c3} alt="" srcset="" />
-                    <h3 className=''>PRECISION </h3>
-                </div>
-                <div className='catagories'>
-                    <img src={c1} alt="" srcset="" />
-                    <h3 className=''>COMBINED</h3>
-                </div>
-                <div className='catagories'>
-                    <img src={c2} alt="" srcset="" />
-                    <h3 className=''>STEEL LATHE</h3>
-                </div>
-                <div className='catagories '>
-                    <img src={c3} alt="" srcset="" />
-                    <h3 className=''>CASTED</h3>
-                </div>
+                {
+                    categories.map(category => <ShowCategory key={category._id} category={category}></ShowCategory>)
+                }
             </div>
         </div>
      );

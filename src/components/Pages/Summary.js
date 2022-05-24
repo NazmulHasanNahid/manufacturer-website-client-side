@@ -56,11 +56,7 @@ const Summary = () => {
             </div>
             <div class="stat">
               <div class="stat-figure text-secondary">
-                <div class="avatar online">
-                  <div class="w-16 rounded-full">
-                    <img src="https://api.lorem.space/image/face?w=128&h=128" />
-                  </div>
-                </div>
+               
               </div>
               <div class="stat-value">10000$</div>
               <div class="stat-title">Annual Revenue</div>

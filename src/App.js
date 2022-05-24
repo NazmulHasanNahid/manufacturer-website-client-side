@@ -24,6 +24,8 @@ import DashboardContainer from './components/Dashboard/DashboardContainer';
 import AllUser from './components/Dashboard/AllUser';
 import RequireAdmin from './components/Auth/RequireAdmin';
 import ManageProducts from './components/Dashboard/ManageProducts';
+import AllReviews from './components/Pages/AllReviews';
+import AddCategories from './components/Dashboard/AddCategories';
 
 function App() {
   return (
@@ -35,6 +37,7 @@ function App() {
         <Route path='/about' element={<About/>}/>
         <Route path='/toolsdetail/:id' element={<RequireAuth><ToolsDetail/></RequireAuth>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/allreviews' element={<AllReviews/>}/>
         <Route path='/signup' element={<SignUp/>}/>
         <Route path='/dashboard' element={<RequireAuth><Dashboard/></RequireAuth>}>
           <Route index element={<DashboardContainer/>}></Route>
@@ -44,6 +47,7 @@ function App() {
           <Route path='myProfile' element={<Myprofile/>}></Route>
           <Route path='alluser' element={<RequireAdmin><AllUser/></RequireAdmin>}></Route>
           <Route path='manageProducts' element={<RequireAdmin><ManageProducts/></RequireAdmin>}></Route>
+          <Route path='addCategory' element={<RequireAdmin><AddCategories/></RequireAdmin>}></Route>
         </Route>
         <Route path='*' element={<NotFound/>}/>
       </Routes>

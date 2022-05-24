@@ -67,7 +67,6 @@
      color: #18212d;
      font-size: 22px;
      text-transform: uppercase;
-     /* letter-spacing: 1px; */
      font-weight: 600;
      margin-bottom: 30px;
  }
@@ -94,11 +93,12 @@
      flex-direction: column;
      align-items: center;
      border-radius: 8px;
-     background-color: rgba(154, 152, 152, 0.042);
-     box-shadow: 0px 8px 15px rgba(183, 179, 179, 0.098);
+     background-color: rgba(73, 21, 21, 0.042);
+     box-shadow: 0px 8px 15px rgba(172, 161, 161, 0.098);
      transition: all 0.3s ease 0s;
      color: rgb(154, 154, 155);
      padding: 25px;
+     
  }
  
  .catagories:hover {
