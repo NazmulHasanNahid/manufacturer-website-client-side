@@ -50,7 +50,7 @@ const Header = ({children}) => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">MOTION</a>
+        <a className="btn btn-ghost normal-case text-xl"><img width={70} src={logo} alt="" /></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">{navItems}</ul>
