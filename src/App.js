@@ -27,6 +27,7 @@ import ManageProducts from './components/Dashboard/ManageProducts';
 import AllReviews from './components/Pages/AllReviews';
 import AddCategories from './components/Dashboard/AddCategories';
 import MyPortfolio from './components/Pages/MyPortfolio';
+import Payment from './components/Pages/Payment';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           <Route index element={<DashboardContainer/>}></Route>
           <Route path='addTools' element={<RequireAdmin><AddTools/></RequireAdmin>}></Route>
           <Route path='myorder' element={<Myorder/>}></Route>
+          <Route path='payment/:payid' element={<Payment/>}></Route>
           <Route path='addreview' element={<AddReview/>}></Route>
           <Route path='myProfile' element={<Myprofile/>}></Route>
           <Route path='alluser' element={<RequireAdmin><AllUser/></RequireAdmin>}></Route>

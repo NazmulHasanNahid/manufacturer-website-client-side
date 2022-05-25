@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../Auth/firebase.init';
 import { signOut } from 'firebase/auth';
 
 
 const Myorder = () => {
      const [order , setOrder] = useState([])
+     
      const [user, loading, error] = useAuthState(auth);
      const navigate = useNavigate()
      useEffect(()=>{
@@ -44,13 +45,14 @@ const Myorder = () => {
     </thead>
     <tbody>
       {
-           order.map(o =>
-            <tr>
-               <th>1</th>
-               <td>{o.producttitle}</td>
-               <td><img width={40} src={o.image} alt="" /></td>
+           order.map((o , index)  => 
+            <tr key={o._id}>
+               
+               <th>{index + 1}</th>
+               <td>{o?.item?.name}</td>
+               <td><img width={40} src={o.item.image} alt="" /></td>
                <td><button className='btn btn-error'>Cancel</button></td>
-               <td><button class="btn btn-primary">Payment</button></td>
+               <td> <Link to={`/dashboard/payment/${o._id}`}><button className="btn btn-primary">Payment</button></Link> </td>
              </tr> )
       }
       

@@ -8,20 +8,22 @@ import auth from "../Auth/firebase.init";
 const ToolsDetail = () => {
   const { id } = useParams();
   const [user, loading, error] = useAuthState(auth);
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit , getValues } = useForm();
 
   const [tools, setTools] = useState({});
   const [quantity, setQuantity] = useState(0);
   const { name, description, image, instock, perproduct, minimumorder } = tools;
   useEffect(() => {
+    
     const url = `http://localhost:5000/tools/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTools(data));
   }, [id]);
   
-
   const onSubmit = (data, e) => {
+    data.item = tools ; 
+    console.log(data);
     const url = `http://localhost:5000/order`;
     fetch(url, {
       method: "POST",
@@ -37,6 +39,8 @@ const ToolsDetail = () => {
       });
     
   };
+
+  
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 flex  items-center my-5">
     
@@ -99,14 +103,8 @@ const ToolsDetail = () => {
                 <input type="number"   className="input my-3 input-bordered w-full max-w-xs" placeholder="Phone number"  {...register("phonenumber", { required: true })} />
                 
                 </div>
-                <div className="form-control w-full max-w-xs">
-                <input type="text" readOnly  className="input my-3 input-bordered w-full max-w-xs" value={name}  {...register("producttitle", { required: true })} />
                 
-                </div>
-                <div className="form-control w-full max-w-xs">
-                <input type="text" readOnly  className="input my-3 input-bordered w-full max-w-xs" value={image}  {...register("image", { required: true })} />
                 
-                </div>
                 <div className="form-control my-3 w-full max-w-xs">
               
                 <input type="text"  placeholder="Adress" className="input input-bordered w-full max-w-xs"  {...register("address", { required: true })}/>
@@ -114,7 +112,8 @@ const ToolsDetail = () => {
                 </div>
                 <div className="form-control my-3 w-full max-w-xs">
                 
-                <input type="number" placeholder="Quanttity" className="input input-bordered w-full max-w-xs"  {...register("qunatity", { required: true })}/>
+                <input type="number" placeholder="Quanttity" className="input input-bordered w-full my-3 max-w-xs"  {...register("qunatity", { required: true })}/>
+               
                 
                 </div>
 
