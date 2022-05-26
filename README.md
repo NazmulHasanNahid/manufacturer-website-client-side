@@ -23,3 +23,8 @@
 ### Tailwind Css
 ### Daisy Ui
 ### react-rating-stars-component 
+## Back-End
+### Node Js
+### Express js
+### JWT
+### DotEnv
