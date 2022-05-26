@@ -47,7 +47,7 @@ const AddCategories = () => {
               <input
                 type="text"
                 placeholder="Type here"
-                {...register("img")}
+                {...register("img" , { required: true })}
                 className="input input-bordered input-lg w-full max-w-xs"
               />
             </div>
