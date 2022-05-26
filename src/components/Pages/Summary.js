@@ -3,7 +3,8 @@ import './Banner.css'
 
 const Summary = () => {
      return (
-          <div className="summary-container mb-4">
+          <div className='my-40'>
+            <div className="summary-container  mb-4">
           <div className="stats stats-vertical lg:stats-horizontal">
             <div className="stat">
               <div className="stat-figure review">
@@ -86,6 +87,7 @@ const Summary = () => {
             </div>
           </div>
       </div>
+          </div>
      );
 };
 

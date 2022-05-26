@@ -16,7 +16,7 @@ const ToolsDetail = () => {
   const { name, description, image, instock, perproduct, minimumorder } = tools;
   useEffect(() => {
     
-    const url = `http://localhost:5000/tools/${id}`;
+    const url = `https://gentle-earth-60406.herokuapp.com/tools/${id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setTools(data));
@@ -25,7 +25,7 @@ const ToolsDetail = () => {
   const onSubmit = (data, e) => {
     data.item = tools ; 
     console.log(data);
-    const url = `http://localhost:5000/order`;
+    const url = `https://gentle-earth-60406.herokuapp.com/order`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -44,7 +44,7 @@ const ToolsDetail = () => {
 
   
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 flex  items-center my-5">
+    <div className="grid grid-cols-1  lg:grid-cols-2 gap-5 flex    items-center my-5">
     
     <div className="card-container g-3 col-sm-12 col-md-6 col-lg-3">
       <div className="card item-cart bg-base-100 ">
@@ -86,7 +86,7 @@ const ToolsDetail = () => {
       
     
     <div>
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card  w-96 bg-base-100 shadow-xl">
             <div className="card-body">
                 <h2 className="text-center text-2xl font-bold">Fill Up The Form</h2>
                 <form onSubmit={handleSubmit(onSubmit)}>

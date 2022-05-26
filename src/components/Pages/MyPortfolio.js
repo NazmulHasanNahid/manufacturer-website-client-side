@@ -2,7 +2,7 @@ import React from "react";
 
 const MyPortfolio = () => {
   return (
-    <div className="px-20   my-5 ">
+    <div className="px-20    my-5 ">
       <div class="card card-side   bg-base-100 shadow-xl">
   <figure>
   <div className="card   bg-base-100 shadow-xl ">

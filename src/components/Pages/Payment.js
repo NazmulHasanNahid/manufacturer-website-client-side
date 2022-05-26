@@ -5,11 +5,11 @@ import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import CheckoutForm from "../Dashboard/CheckoutForm";
 import Loading from "../Shared/Loading";
-const stripePromise = loadStripe("pk_test_51L3Dg3D2lre9ret5x1I9FHxdWbadlGVFE1fAmQ2N9oVO2EppCtq9BLqFtHfSuut3WWZZON3exSiRCqhumz7h4BYV00sRK9OkYC");
+const stripePromise = loadStripe('pk_test_51L3Dg3D2lre9ret5x1I9FHxdWbadlGVFE1fAmQ2N9oVO2EppCtq9BLqFtHfSuut3WWZZON3exSiRCqhumz7h4BYV00sRK9OkYC');
 
 const Payment = () => {
   const { payid } = useParams();
-  const url = ` http://localhost:5000/payment/${payid}`;
+  const url = ` https://gentle-earth-60406.herokuapp.com/payment/${payid}`;
   const { data: booking, isLoading , isFetching } = useQuery(["payment", payid], () =>
     fetch(url, {
       method: "GET",
@@ -40,17 +40,18 @@ const Payment = () => {
           <p>
             Please Pay :{" "}
             <span className="font-bold text-orange-300">
-              ${booking?.item?.perproduct}
+            $  {booking?.item?.perproduct}
             </span>
           </p>
         </div>
       </div>
        <div className="card flex-shrink-0 w-50 max-w-md shadow-2xl bg-base-100">
-                {/* <div className="card-body">
-                    <Elements stripe={stripePromise}>
+                <div className="card-body">
+                    {/* <Elements stripe={stripePromise}>
                         <CheckoutForm booking={booking} />
-                    </Elements>
-                </div> */}
+                    </Elements> */}
+                    
+                </div>
             </div>
       
     </div>

@@ -1,10 +1,13 @@
 import React from "react";
 import { toast } from "react-toastify";
+import useUsers from "../../hooks/userUsers";
+import Loading from "../Shared/Loading";
 
-const UserRow = ({ user, index }) => {
-  const { email , role} = user;
+const UserRow = ({ user, index , handleRemove }) => {
+  const { email , role ,_id } = user;
+ 
   const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${email}`, {
+        fetch(`https://gentle-earth-60406.herokuapp.com/user/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -24,12 +27,13 @@ const UserRow = ({ user, index }) => {
             })
     }
 
+    
   return (
     <tr>
     <th>1</th>
     <td>{email}</td>
     <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
-    <td><button className="btn btn-xs">Remove User</button></td>
+    <td><button onClick={()=>handleRemove(_id)} className="btn btn-xs ">Remove User</button></td>
 </tr>
   );
 };

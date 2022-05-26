@@ -9,7 +9,7 @@ const LoadProfile = () => {
      const [profile , setprofile] = useState([])
      
      useEffect(()=>{
-          fetch(`http://localhost:5000/profile?email=${user.email}` ,{
+          fetch(`https://gentle-earth-60406.herokuapp.com/profile?email=${user.email}` ,{
               method:'GET',
               headers:{
               'authorization':` Bearer ${localStorage.getItem('accessToken')}`

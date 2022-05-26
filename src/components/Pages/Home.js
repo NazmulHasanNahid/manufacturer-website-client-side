@@ -14,6 +14,7 @@ const Home = () => {
               <FeatureTools/>
               <Summary/>
               <Reviews/>
+              
           </div>
      );
 };

@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 const AddCategories = () => {
      const { register, handleSubmit } = useForm();
      const onSubmit = (data, e) => {
-       const url = `http://localhost:5000/category`;
+       const url = `https://gentle-earth-60406.herokuapp.com/category`;
        fetch(url, {
          method: "POST",
          headers: {

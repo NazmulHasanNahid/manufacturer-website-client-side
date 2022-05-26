@@ -9,7 +9,7 @@ const Myprofile = () => {
      const [user] = useAuthState(auth)
      const { register, handleSubmit } = useForm();
      const onSubmit = (data, e) => {
-       const url = `http://localhost:5000/profile`;
+       const url = `https://gentle-earth-60406.herokuapp.com/profile`;
        fetch(url, {
          method: "POST",
          headers: {

@@ -7,7 +7,7 @@ const ManageProducts = () => {
   const handleDelet = (id) => {
      const proceed = window.confirm("Are you sure you want to delet");
      if (proceed) {
-       const url = `http://localhost:5000/tools/${id}`;
+       const url = `https://gentle-earth-60406.herokuapp.com/tools/${id}`;
        fetch(url, {
          method: "DELETE",
        })

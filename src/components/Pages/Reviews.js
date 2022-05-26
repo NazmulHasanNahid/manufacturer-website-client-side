@@ -8,7 +8,7 @@ import ShowReview from './ShowReview';
 
 const Reviews = () => {
      const { isLoading, error, data:reviews } = useQuery('repoData', () =>
-     fetch('http://localhost:5000/reviews').then(res =>
+     fetch('https://gentle-earth-60406.herokuapp.com/reviews').then(res =>
        res.json()
      )
    ) 
@@ -18,8 +18,8 @@ const Reviews = () => {
  
      
      return (
-          <div className='px-20'>
-               <h2 className='text-center text-3xl my-6 font-bold'>Client Reviews</h2>
+          <div className='px-20 mb-20'>
+               <h2 className='text-center text-3xl my-6 font-bold'>Client Reviews <br /> ____</h2>
           <div className=' grid grid-cols-1 lg:grid-cols-3 gap-5 my-5'>
                
             

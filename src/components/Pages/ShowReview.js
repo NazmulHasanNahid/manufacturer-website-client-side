@@ -7,10 +7,11 @@ const ShowReview = ({review}) => {
       <div className="card item-cart bg-base-200  ">
        
         <div className="card-body">
-          <h2 className="card-title">{review.name}</h2>
+          <h2 className="card-title">{review?.name}</h2>
           <p>
-            <small>{review.review}</small>
+            <small>{review?.review}</small>
           </p>
+          <p>Rating: {review?.rating}</p>
         </div>
       </div>
     </div>

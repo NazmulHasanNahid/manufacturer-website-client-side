@@ -9,7 +9,7 @@ const AddReview = () => {
 
      const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
-    const url = `http://localhost:5000/review`;
+    const url = `https://gentle-earth-60406.herokuapp.com/review`;
     fetch(url, {
       method: "POST",
       headers: {

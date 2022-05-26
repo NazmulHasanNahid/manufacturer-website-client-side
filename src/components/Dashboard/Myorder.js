@@ -12,7 +12,7 @@ const Myorder = () => {
      const [user, loading, error] = useAuthState(auth);
      const navigate = useNavigate()
      useEffect(()=>{
-          fetch(`http://localhost:5000/order?email=${user.email}` ,{
+          fetch(`https://gentle-earth-60406.herokuapp.com/order?email=${user.email}` ,{
               method:'GET',
               headers:{
               'authorization':` Bearer ${localStorage.getItem('accessToken')}`
@@ -33,7 +33,7 @@ const Myorder = () => {
      const handleDelet = (id) => {
       const proceed = window.confirm("Are you sure you want to Cencel");
       if (proceed) {
-        const url = `http://localhost:5000/order/${id}`;
+        const url = `https://gentle-earth-60406.herokuapp.com/order/${id}`;
         fetch(url, {
           method: "DELETE",
         })
