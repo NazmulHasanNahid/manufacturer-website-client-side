@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactStars from 'react-rating-stars-component';
 
 const ShowAllReviews = ({review}) => {
      return (
@@ -7,9 +8,7 @@ const ShowAllReviews = ({review}) => {
        
         <div className="card-body">
           <h2 className="card-title">{review.name}</h2>
-          <p>
-            <small>{review.review}</small>
-          </p>
+          <ReactStars count={review?.rating} activeColor="#ffd700" />,
         </div>
       </div>
     </div>

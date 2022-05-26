@@ -11,7 +11,7 @@ const MyPortfolio = () => {
                 <li>
                   
                   <span className="font-bold">Expertise</span> : HTML5, CSS,
-                  JavaScript (ES6), React.js, React Query , React Hook Form , React Slick , React Toastify , React Icons, Bootstrap,React Bootsrap , Tailwind, R Daisy Ui ,
+                  JavaScript (ES6), React.js, React Query , React Hook Form , React Slick , React Toastify , React Icons, Bootstrap,React Bootsrap , Tailwind,  Daisy Ui ,
                   Express JS, Node JS, MongoDB.
                 </li>
                 <li>
