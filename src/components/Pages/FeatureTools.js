@@ -13,7 +13,7 @@ const FeatureTools = () => {
                <h2 className='text-center text-3xl font-bold'>Feature Tools <br /> _____</h2>
                <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 justify-center px-20 my-5'>
                     {
-                         tools.map(tool => <ShowFeatureTools key={tool._id} tool={tool}></ShowFeatureTools>)
+                         tools.slice(0,6).map(tool => <ShowFeatureTools key={tool._id} tool={tool}></ShowFeatureTools>)
                     }
                </div>
 
