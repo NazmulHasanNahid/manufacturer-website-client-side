@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
@@ -6,6 +6,7 @@ import auth from '../Auth/firebase.init';
 
 const AddReview = () => {
   const [user, loading, error] = useAuthState(auth);
+  const [rate, setRate] = useState(0)
 
      const { register, handleSubmit } = useForm();
   const onSubmit = (data, e) => {
@@ -51,7 +52,7 @@ const AddReview = () => {
               <input
                 type="number"
                 placeholder="Type here"
-                {...register("rating")}
+                {...register("rating" , { required: true  })}
                 className="input input-bordered input-lg w-full max-w-xs"
               />
             </div>
@@ -62,7 +63,7 @@ const AddReview = () => {
               <textarea
                 type="text"
                 placeholder="Type here"
-                {...register("review")}
+                {...register("review" , { required: true })}
                 className="input input-bordered input-lg w-full max-w-xs"
               />
             </div>

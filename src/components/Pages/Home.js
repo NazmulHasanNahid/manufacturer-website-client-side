@@ -5,6 +5,7 @@ import FeatureTools from './FeatureTools';
 import Reviews from './Reviews';
 import Summary from './Summary';
 import './Banner.css'
+import Upcoming from './Upcoming';
 
 const Home = () => {
      return (
@@ -14,6 +15,7 @@ const Home = () => {
               <FeatureTools/>
               <Summary/>
               <Reviews/>
+              <Upcoming/>
               
           </div>
      );

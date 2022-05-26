@@ -22,3 +22,4 @@
 ### React-firebase-hooks 
 ### Tailwind Css
 ### Daisy Ui
+### react-rating-stars-component 

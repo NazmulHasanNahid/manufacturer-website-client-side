@@ -88,7 +88,7 @@ const Login = () => {
                     <span className="label-text">Password</span>
                    
                 </label>
-                <input type="password" placeholder="password" className="input input-bordered w-full max-w-xs" {...register("password",  {
+                <input type="password" placeholder="password" className="input input-bordered w-full max-w-xs" {...register("password",   {
                                 required:{
                                     value:true ,
                                     message:'password is required'
