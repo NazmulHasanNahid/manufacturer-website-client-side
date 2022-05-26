@@ -8,9 +8,9 @@ const Footer = () => {
             <div className='footer w-full   '>
                 <div>
                     <span className="footer-title">Services</span>
-                    <Link to="/" className="link link-hover">Branding</Link>
-                    <Link to="/" className="link link-hover">Design</Link>
-                    <Link to="/" className="link link-hover">Marketing</Link>
+                    <Link to="/" className="link link-hover">Tools</Link>
+                    <Link to="/" className="link link-hover">Manufacture</Link>
+                    <Link to="/" className="link link-hover">Indrusty</Link>
                     <Link to="/" className="link link-hover">Advertisement</Link>
                 </div>
                 <div>

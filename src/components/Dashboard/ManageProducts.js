@@ -41,7 +41,7 @@ const ManageProducts = () => {
                 <img width={30} src={tool?.image} alt="" />
               </td>
               <td>
-                <button onClick={handleDelet} className="btn btn-error text-white">Delete</button>
+                <button onClick={()=>handleDelet(tool._id)} className="btn btn-error text-white">Delete</button>
               </td>
             </tr>
           ))}

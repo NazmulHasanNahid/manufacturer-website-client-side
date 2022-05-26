@@ -5,7 +5,8 @@ import React, { useEffect, useState } from "react";
 
 const CheckoutForm = ({booking}) => {
   console.log(booking);
-     const {perproduct : price} = booking.item
+    const {perproduct : price} = booking.item
+   
      const stripe = useStripe()
      const elements = useElements();
      const [cardError , setCardError] = useState('')
