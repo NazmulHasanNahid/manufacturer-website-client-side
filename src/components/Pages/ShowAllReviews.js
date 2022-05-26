@@ -8,7 +8,8 @@ const ShowAllReviews = ({review}) => {
        
         <div className="card-body">
           <h2 className="card-title">{review.name}</h2>
-          <ReactStars count={review?.rating} activeColor="#ffd700" />,
+          <p>{review.review}</p>
+          <ReactStars count={review?.rating} activeColor="#ffd700" />
         </div>
       </div>
     </div>

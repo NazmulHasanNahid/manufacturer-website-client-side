@@ -14,7 +14,7 @@ const ShowReview = ({ review }) => {
 
           <p>
             {" "}
-            <ReactStars count={review?.rating} activeColor="#ffd700" />,
+            <ReactStars count={review?.rating} activeColor="#ffd700" />
           </p>
         </div>
       </div>
