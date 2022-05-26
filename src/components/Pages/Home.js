@@ -6,6 +6,7 @@ import Reviews from './Reviews';
 import Summary from './Summary';
 import './Banner.css'
 import Upcoming from './Upcoming';
+import ContactForm from './ContactForm';
 
 const Home = () => {
      return (
@@ -16,6 +17,7 @@ const Home = () => {
               <Summary/>
               <Reviews/>
               <Upcoming/>
+              <ContactForm/>
               
           </div>
      );
