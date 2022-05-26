@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../Auth/firebase.init";
 
 const ToolsDetail = () => {
+  const navigate = useNavigate()
   const { id } = useParams();
   const [user, loading, error] = useAuthState(auth);
   const { register, handleSubmit , getValues } = useForm();
@@ -36,6 +37,7 @@ const ToolsDetail = () => {
       .then((result) => {
         e.target.reset();
         toast("Order Successfull");
+        navigate('/dashboard/myorder')
       });
     
   };

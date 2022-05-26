@@ -4,13 +4,14 @@ import React, { useEffect, useState } from "react";
 
 
 const CheckoutForm = ({booking}) => {
-  console.log(booking);
-    const {perproduct : price} = booking.item
+     console.log(booking.item.perproduct);
    
+    const price = booking.item.perproduct
      const stripe = useStripe()
      const elements = useElements();
      const [cardError , setCardError] = useState('')
      const [clientSecret ,setClientSecret ] = useState('')
+     console.log(clientSecret);
      useEffect(()=>{
         fetch('http://localhost:5000/create-payment-intent' ,{
              method:'POST',
